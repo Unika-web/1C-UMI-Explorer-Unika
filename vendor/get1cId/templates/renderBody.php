@@ -167,8 +167,11 @@
 require_once dirname(__FILE__) . '/table.php'; ?>
 
 <footer class="col-md-12 bg-primary fixed-bottom d-flex justify-content-between align-items-center" style="max-height: 60px">
-    <div class="col-md-8 py-2">
+    <div class="col-md-4 py-2">
         <p class="text-white mb-0">Свободно распространяемая программа от Unika</p>
+    </div>
+    <div class="col-md-4 py-2">
+        <p class="text-white mb-0 text-center">Версия 1.1</p>
     </div>
     <div class="col-md-4 text-right py-2">
         <a href="https://unikaweb.ru/"><img style="max-height: 50px" src="/vendor/get1cId/img/unika_logo.png" alt="Unika"></a>

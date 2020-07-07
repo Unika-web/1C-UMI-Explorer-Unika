@@ -42,7 +42,7 @@ class OneS
 
         if ($sort === 'desc') {
             $selectSql = <<<SQL
-SELECT cms3_hierarchy.id, is_active, obj_id, cms3_objects.name, old_id, ext FROM cms3_hierarchy
+SELECT cms3_hierarchy.id, is_active, obj_id, cms3_objects.name, old_id, ext, is_deleted FROM cms3_hierarchy
 LEFT JOIN cms3_objects ON cms3_objects.id = obj_id
 LEFT JOIN cms3_import_relations ON new_id = cms3_hierarchy.id AND source_id = '{$sourceId}'
 LEFT JOIN cms3_hierarchy_types ON cms3_hierarchy_types.id = '{$typeId}'
@@ -50,7 +50,7 @@ WHERE cms3_hierarchy.type_id = '{$typeId}' ORDER BY $by DESC LIMIT $page, $perPa
 SQL;
         } else {
             $selectSql = <<<SQL
-SELECT cms3_hierarchy.id, is_active, obj_id, cms3_objects.name, old_id, ext FROM cms3_hierarchy
+SELECT cms3_hierarchy.id, is_active, obj_id, cms3_objects.name, old_id, ext, is_deleted FROM cms3_hierarchy
 LEFT JOIN cms3_objects ON cms3_objects.id = obj_id
 LEFT JOIN cms3_import_relations ON new_id = cms3_hierarchy.id AND source_id = '{$sourceId}'
 LEFT JOIN cms3_hierarchy_types ON cms3_hierarchy_types.id = '{$typeId}'
@@ -176,7 +176,7 @@ SQL;
         $search = $connection->escape(trim($_GET['search']));
 
         $selectSql = <<<SQL
-SELECT cms3_hierarchy.id, is_active, obj_id, cms3_objects.name, old_id, ext FROM cms3_hierarchy
+SELECT cms3_hierarchy.id, is_active, obj_id, cms3_objects.name, old_id, ext, is_deleted FROM cms3_hierarchy
 LEFT JOIN cms3_objects ON cms3_objects.id = obj_id
 LEFT JOIN cms3_import_relations ON new_id = cms3_hierarchy.id AND source_id = '{$sourceId}'
 LEFT JOIN cms3_hierarchy_types ON cms3_hierarchy_types.id = cms3_hierarchy.type_id
@@ -205,7 +205,8 @@ SQL;
                     'name' => $row['name'],
                     'old_id' => $row['old_id'],
                     'active' => $row['is_active'],
-                    'ext' => $row['ext']
+                    'ext' => $row['ext'],
+                    'deleted' => $row['is_deleted']
                 ];
             }
         }
