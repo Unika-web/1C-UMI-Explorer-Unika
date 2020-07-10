@@ -18,7 +18,8 @@ try {
 }
 
 if (!permissionsCollection::getInstance()->isSv()) {
-    echo '<p>Не хватает прав доступа</p>';
+    echo '<html lang="ru"><head><meta charset="utf-8" /><title>1С-UMI Explorer — Unika</title></head>
+        <body><p>Не хватает прав доступа</p>';
     exit;
 }
 
