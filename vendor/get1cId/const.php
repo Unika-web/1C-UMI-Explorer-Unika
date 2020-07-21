@@ -14,3 +14,4 @@ define('SORT_BY_NAME', 'name');
 define('SORT_BY_ID', 'id');
 define('SORT_BY_1S', 'oneS');
 define('SORT_BY_ACTIVE', 'active');
+define('SORT_BY_STATUS', 'status');

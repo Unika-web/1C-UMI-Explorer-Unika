@@ -142,6 +142,10 @@
                         <?= $by === SORT_BY_ACTIVE ? 'selected' : '' ?>
                             value="<?= SORT_BY_ACTIVE ?>">По активности
                     </option>
+                    <option
+                        <?= $by === SORT_BY_STATUS ? 'selected' : '' ?>
+                            value="<?= SORT_BY_STATUS ?>">По состоянию
+                    </option>
                 </select>
             </div>
             <div class="col-md-4">
@@ -171,7 +175,7 @@ require_once dirname(__FILE__) . '/table.php'; ?>
         <p class="text-white mb-0">Свободно распространяемая программа от Unika</p>
     </div>
     <div class="col-md-4 py-2">
-        <p class="text-white mb-0 text-center">Версия 1.1</p>
+        <p class="text-white mb-0 text-center">Версия 1.1.1</p>
     </div>
     <div class="col-md-4 text-right py-2">
         <a href="https://unikaweb.ru/"><img style="max-height: 50px" src="/vendor/get1cId/img/unika_logo.png" alt="Unika"></a>

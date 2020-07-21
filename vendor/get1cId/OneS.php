@@ -28,6 +28,9 @@ class OneS
             case SORT_BY_ACTIVE:
                 $by = 'is_active';
                 break;
+            case SORT_BY_STATUS:
+                $by = 'is_deleted';
+                break;
             default:
                 $by = 'cms3_hierarchy.id';
         }
